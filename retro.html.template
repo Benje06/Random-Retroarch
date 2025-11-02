@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<meta http-equiv="refresh" content="5">
+<html>
+	<head></head>
+	<style>
+		::-webkit-scrollbar {
+			display: none;
+		}
+
+		body {
+			border: 0px;
+			padding: 0px;
+			margin: 0px;
+			background-color: rgba(0, 0, 0, 1);
+			overflow: hidden;
+		}
+
+		.GameMsgContener {
+			background: rgba(77, 77, 77, 1);
+			padding: 0px;
+			margin-left: 0px;
+			heigth:100%;
+		}
+		
+		.ConsoleLogo{
+			margin:15px;
+			width:100%;
+		}
+		.jacquettes{
+			border-radius: 8px;
+			width: 100%;
+		}
+		.TxtConsole, .TxtGameIMG{
+			display: block;
+			text-align: left;
+			margin-right: 0px;
+			margin-left: 0px;
+			width: 100%;
+			text-align:center;
+			background-color: rgba(0, 0, 0, 1);
+		}
+
+		.TxtGameName{
+			display: block;
+			color: rgb(255, 255, 255);
+			font-size: 52px;
+			font-family: 'Alef';
+			text-align:center;
+			word-break: break-word;
+			background-color: rgba(0, 0, 0, 1);
+			#border: solid white 1px;
+		}
+	</style>	
+	<body>
+		<div class="GameMsgContener">
+			<div class="TxtConsole">
+				<img class="ConsoleLogo" src="../../../../E:/rom_unpack/CONSOLE/media/CONSOLE.svg" alt="CONSOLE"/>
+				<!--strong style="text-transform:uppercase">snes</strong-->
+			</div>
+			<div class="TxtGameName">
+				<img class="jacquettes" src="../../../../E:/rom_unpack/CONSOLE/media/images/CURRENTGAME.png"/>
+				<!--strong style="text-transform:uppercase">snes</strong-->
+			</div>
+			<div class="TxtGameName">
+				<strong>CURRENTGAME</strong>
+			</div>
+		</div>
+	</body>
+</html>
