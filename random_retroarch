@@ -227,7 +227,7 @@ function select_game(){
 	#echo "Game list: $gamelist"
 	
 	# list all roms that contains rom name
-	#rom="Faxanadu"
+	#rom="We're Back! - A Dinosaur's Story"
 	rom=$(echo ${rom} | sed 's/\&amp;/\&/g' )
 	rom_w_ext=$(echo ${rom} |sed -e 's/ (.*)//g' -e 's/ \[.*\]//g' -e 's/\..*//g') # remove extention in rom name depend if name come from xml or file list
 	
@@ -301,10 +301,11 @@ function generate_obs_title(){
 
 function set_stream_title(){
 	# generate script content to set the good title
+	title=$( echo "${current_game}" |  sed "s/'/'\"'\"'/g" )
 	if [[ -v categorie ]] ; then
-		sed -e "s/TITLE/${current_game} un ${categorie} sur la ${current_console}/g"  ${SCRIPT_PATH}/set_game_title.sh >  ${SCRIPT_PATH}/set_current_game_title.sh
+		sed -e "s/TITLE/${title} un ${categorie} sur la ${current_console}/g"  ${SCRIPT_PATH}/set_game_title.sh >  ${SCRIPT_PATH}/set_current_game_title.sh
 	else
-		sed -e "s/TITLE/${current_game} sur la ${current_console}/g"  ${SCRIPT_PATH}/set_game_title.sh >  ${SCRIPT_PATH}/set_current_game_title.sh
+		sed -e "s/TITLE/${title} sur la ${current_console}/g"  ${SCRIPT_PATH}/set_game_title.sh >  ${SCRIPT_PATH}/set_current_game_title.sh
 	fi
 	# call the api script to change twitch title
 	bash ${SCRIPT_PATH}/set_current_game_title.sh
