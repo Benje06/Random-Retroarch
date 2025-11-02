@@ -21,9 +21,6 @@ ROM_PATH="/mnt/e/rom_unpack"
 # core definition for windows
 EMULATOR_DEF_PATH="${SCRIPT_PATH}/Emulators.xml"
 
-# translation string inside rom name to be search (set to empty aka "" for no translation search)
-trad="T+Fre"
-	
 ### categorie 
 # TODO set by param
 #set -x 
@@ -235,7 +232,9 @@ function select_game(){
 	#echo "all rom matching name ${rom_w_ext}: "
 	#echo "	$(ls ${ROM_PATH}/${current_console}/ | grep -ie "^${rom_w_ext}")" 
 
-
+	# translation string inside rom name to be search (set to empty aka "" for no translation search)
+	trad="T+Fre"
+	
 	search_rom ${trad}
 	# if the rom var is empty find any trad EN matching rom
 	if [[ "${tmpname}" == "" ]]; then  
