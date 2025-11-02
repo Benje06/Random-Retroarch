@@ -28,7 +28,7 @@ trad="T+Fre"
 # TODO set by param
 #set -x 
 #set -v
-. ${ROM_PATH}/param_random_retroarch.txt
+. ${SCRIPT_PATH}/param_random_retroarch.txt
 
 # Functions
 function randomize(){
