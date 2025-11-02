@@ -2,6 +2,9 @@
 #set -x
 #set -v
 
+# script and utility path wherer all files from git are
+SCRIPT_PATH="/mnt/d/Telechargements/emulations/script"
+
 # paths seen from windows
 RETROARCH_WIN_PATH="D:\RetroArch"
 ROM_PATH_WIN="e:\\rom_unpack"
@@ -16,10 +19,7 @@ ROM_PATH="/mnt/e/rom_unpack"
 #ROM_PATH="/mnt/rom_directory"
 
 # core definition for windows
-EMULATOR_DEF_PATH="/mnt/d/Jeux steam/retro/LaunchBox/Data/Emulators.xml"
-
-# script and utility path 
-SCRIPT_PATH="/mnt/d/Telechargements/emulations/script"
+EMULATOR_DEF_PATH="${SCRIPT_PATH}/Emulators.xml"
 
 # translation string inside rom name to be search (set to empty aka "" for no translation search)
 trad="T+Fre"
