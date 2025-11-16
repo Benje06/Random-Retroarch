@@ -205,11 +205,11 @@
 </EmulatorPlatform>
 <EmulatorPlatform>
   <Platform>Sega 32X</Platform>
-  <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
+  <CommandLine>-L "cores\picodrive_libretro.dll"</CommandLine>
 </EmulatorPlatform>
 <EmulatorPlatform>
   <Platform>sega32x</Platform>
-  <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
+  <CommandLine>-L "cores\picodrive_libretro.dll"</CommandLine>
 </EmulatorPlatform>
 <EmulatorPlatform>
   <Platform>Sega CD</Platform>
