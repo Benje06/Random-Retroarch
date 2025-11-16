@@ -577,14 +577,14 @@
   <EmulatorPlatform>
     <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
     <Platform>Sony Playstation</Platform>
-    <CommandLine>-L "cores\duckstation_libretro.dll"</CommandLine>
+    <CommandLine>-L "cores\swanstation_libretro.dll"</CommandLine>
     <Default>true</Default>
     <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
   </EmulatorPlatform>
   <EmulatorPlatform>
     <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
     <Platform>psx</Platform>
-    <CommandLine>-L "cores\duckstation_libretro.dll"</CommandLine>
+    <CommandLine>-L "cores\swanstation_libretro.dll"</CommandLine>
     <Default>true</Default>
     <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
   </EmulatorPlatform>
