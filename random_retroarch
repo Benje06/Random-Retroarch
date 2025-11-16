@@ -48,7 +48,7 @@ function select_console(){
 	#snes
 	#mastersystem
 	#gw"
-	#CONSOLES="segacd"
+	#CONSOLES="pcenginecd"
 	# get the number of console
 	max_console=$(echo "$CONSOLES" | wc -l)
 	# echo "max_console: $max_console"
@@ -150,7 +150,7 @@ function search_rom(){
 			tmpname=$(ls ${ROM_PATH}/${current_console}/ | grep -ie "${rom_w_ext} (${country}) (.*)\.") 
 		fi
 		if [[ "${tmpname}" != "" ]] ; then # if found set it to the rom var
-			rom=$tmpname
+			manage_multi_entry_and_cue
 			break
 		fi
 	done
@@ -164,7 +164,7 @@ function search_rom(){
 				tmpname=$(ls ${ROM_PATH}/${current_console}/ | grep -ie "${rom_w_ext} (${country}) (.*) \[${1}.*\]\.") 
 			fi
 			if [[ "${tmpname}" != "" ]] ; then # if found set it to the rom var
-				rom=$tmpname
+				manage_multi_entry_and_cue
 				break
 			fi
 		done
@@ -186,18 +186,23 @@ function search_rom(){
 				tmpname=$(ls ${ROM_PATH}/${current_console}/ | grep -ie "${rom_w_ext} (${country}) (.*)\.") 
 			fi
 			if [[ "${tmpname}" != "" ]] ; then # if found set it to the rom var
-				# cut on first or cue
-				if [[ $(echo ${tmpname} | grep -c "\.cue") == 0 ]]; then
-					rom=$(echo "$tmpname" | head -n 1)
-				else 
-					rom=$(echo "$tmpname" |  grep "\.cue")
-				fi
+				manage_multi_entry_and_cue
 				break
 			fi
 		done
 	fi
 }
-
+function manage_multi_entry_and_cue(){
+	# cut on first or cue
+	if [[ $(echo ${tmpname} | grep -c "\.cue") == 0 ]]; then
+		rom=$(echo "${tmpname}" | head -n 1)
+	else 
+		rom=$(echo "${tmpname}" |  grep "\.cue")
+	fi
+	if [[ ${current_console} == 'pcenginecd' ]]; then
+		rom=$(echo "${tmpname}" |  sed 's/\.bin/\.cue/g')
+	fi
+}
 function select_game(){
 	### Select a rom
 	# 	or from the gamelist.xml file 
@@ -260,6 +265,8 @@ function select_game(){
 		fi
 	fi
 
+	tmpname=${rom}
+	manage_multi_entry_and_cue
 	#echo "$gamelist"
 	## if file for launchedgame doesn't exist create it
 	if [[ ! -f ${categorie}_launchedgames.txt ]]; then 
