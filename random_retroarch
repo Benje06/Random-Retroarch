@@ -23,8 +23,6 @@ EMULATOR_DEF_PATH="${SCRIPT_PATH}/Emulators.xml"
 
 ### categorie 
 # TODO set by param
-#set -x 
-#set -v
 . ${SCRIPT_PATH}/param_random_retroarch.txt
 
 # Functions
@@ -45,11 +43,12 @@ function select_console(){
 	# list console from directory
 	CONSOLES=$(ls -dX */| sed "s/\///") 
 	# or define a list of console directory
-	CONSOLES="megadrive
-	nes
-	snes
-	mastersystem
-	gw"
+	#CONSOLES="megadrive
+	#nes
+	#snes
+	#mastersystem
+	#gw"
+	#CONSOLES="segacd"
 	# get the number of console
 	max_console=$(echo "$CONSOLES" | wc -l)
 	# echo "max_console: $max_console"
@@ -74,7 +73,8 @@ function select_console(){
 				${current_console} != "tic80" &&
 				${current_console} != "thomson" &&
 				${current_console} != "virtualboy" &&
-				${current_console} != "satellaview"
+				${current_console} != "satellaview" &&
+				${current_console} != "easyrpg"
 			]]; then
 			console=${current_console}
 			echo -e " Console: ${console}\tRandom number: ${random_number}"
@@ -107,13 +107,15 @@ function get_gamelist(){
 		if [[ -v saga ]] ;then
 			echo " Saga: ${saga}"
 			# get all game of the current console that contains saga name
-			gamelist=$(ls ${ROM_PATH}/${current_console} | grep -iE "${saga}"|sort -n)
+			gamelist=$(ls ${ROM_PATH}/${current_console} | grep -ve "\.srm" -ve "\.txt" -ve "\.xml" -ve "/" | grep -iE "${saga}"|sort -n)
 		# else get list of games
 		else			
 			if [ $(cat /proc/version | grep -c microsoft) == 0 ] ; then
 				# LINUX json playlist
+				echo "Linux"
 				gamelist=$(grep '"path' "$currentPlaylist" | cut -d ':' -f2 | sed 's/",$//' | sed 's/^ "//' )
 			else
+				echo "Windows"
 				# windows new format not compressed
 				# gamelist retroarch
 				#old #gamelist=$(grep '"path' "$RETROARCH_PLAYLIST/$currentPlaylist" | cut -d '"' -f4 | sed 's/",$//' | sed 's/^ "//')
@@ -184,7 +186,12 @@ function search_rom(){
 				tmpname=$(ls ${ROM_PATH}/${current_console}/ | grep -ie "${rom_w_ext} (${country}) (.*)\.") 
 			fi
 			if [[ "${tmpname}" != "" ]] ; then # if found set it to the rom var
-				rom=$tmpname
+				# cut on first or cue
+				if [[ $(echo ${tmpname} | grep -c "\.cue") == 0 ]]; then
+					rom=$(echo "$tmpname" | head -n 1)
+				else 
+					rom=$(echo "$tmpname" |  grep "\.cue")
+				fi
 				break
 			fi
 		done
@@ -224,10 +231,10 @@ function select_game(){
 	#echo "Game list: $gamelist"
 	
 	# list all roms that contains rom name
-	#rom="We're Back! - A Dinosaur's Story"
 	rom=$(echo ${rom} | sed 's/\&amp;/\&/g' )
+	#rom="rom to be tested"
 	rom_w_ext=$(echo ${rom} |sed -e 's/ (.*)//g' -e 's/ \[.*\]//g' -e 's/\..*//g') # remove extention in rom name depend if name come from xml or file list
-	
+
 	#echo "rom: ${rom}" 
 	#echo "all rom matching name ${rom_w_ext}: "
 	#echo "	$(ls ${ROM_PATH}/${current_console}/ | grep -ie "^${rom_w_ext}")" 
@@ -359,16 +366,21 @@ function start_game(){
 
 ### Main 
 # set console
-console=""
-while [[ ${console} == "" ]] ; do 
-	select_console
-done
-get_gamelist
+#console=""
+#while [[ ${console} == "" ]] ; do #
+#	select_console
+#done
+#get_gamelist
 
 is_a_listed_game=1
-until [[ ${is_a_listed_game} == 0 ]]; do                                      
+until [[ ${is_a_listed_game} == 0 ]]; do
+	console=""
+	while [[ ${console} == "" ]] ; do 
+		select_console
+	done
+	get_gamelist                                   
 	currentPlaylist="${ROM_PATH}/${current_console}/gamelist.xml" # playlist directory
-	if [[ -f "${currentPlaylist}" ]] ;then # if there is no gamelist in the directory 
+	if [[ -f "${currentPlaylist}" ]] ;then # if there is gamelist in the directory 
 		select_game
 	fi
 done
