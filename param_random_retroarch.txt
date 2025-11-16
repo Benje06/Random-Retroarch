@@ -1,4 +1,14 @@
+# OBS if true will generate the html page (retro.html) based on the template (retro.html.templte) for obs
+# with the console name/logo, jacquettes/images from scrapping and game's name
 obs="true"
+# STREAM if set to twitch (the only supported) will generate and launch the script (set_current_game_title.sh) 
+# to change the stream name from the template set_game_title.sh
 stream="twitch"
+# CATEGORIE if uncommented will search for file in the console directory named ${categorie}_list.txt 
+# to make the gamelist
 #categorie="shmup"
-#saga=""
+# SAGA if uncommented will search the string in game's names (non case sensitive)
+# to make the gamelist
+# saga="Zelda"
+# FAVORITES if true will use the retroarch favorites files to build the gamelist 
+favorites="true"
