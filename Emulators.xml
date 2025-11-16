@@ -1,802 +1,393 @@
 <?xml version="1.0" standalone="yes"?>
-<LaunchBox>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>apple2gs</Platform>
-    <CommandLine>-L "cores\_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>1754145d-8e11-4d24-aa0e-0a69da702d3f</Emulator>
-    <Platform>Playstation 2</Platform>
-    <CommandLine />
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>b2f982fd-d332-41cb-b891-48795e0ddf5b</Emulator>
-    <Platform>PSX</Platform>
-    <CommandLine />
-    <Default>false</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>amstradcpc</Platform>
-    <CommandLine>-L "cores\cap32_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>gx4000</Platform>
-    <CommandLine>-L "cores\cap32_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>amigacd32</Platform>
-    <CommandLine>-L "cores\puae_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-   <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>amiga600</Platform>
-    <CommandLine>-L "cores\puae_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>arcade</Platform>
-    <CommandLine>-L "cores\mame_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Atari 2600</Platform>
-    <CommandLine>-L "cores\stella_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>atari2600</Platform>
-    <CommandLine>-L "cores\stella_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Atari 5200</Platform>
-    <CommandLine>-L "cores\atari800_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>atari5200</Platform>
-    <CommandLine>-L "cores\atari800_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Atari 7800</Platform>
-    <CommandLine>-L "cores\prosystem_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>atari7800</Platform>
-    <CommandLine>-L "cores\prosystem_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>atarist</Platform>
-    <CommandLine>-L "cores\hatari_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>c64</Platform>
-    <CommandLine>-L "cores\vice_x64sc_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Atari Jaguar</Platform>
-    <CommandLine>-L "cores\virtualjaguar_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Atari Lynx</Platform>
-    <CommandLine>-L "cores\handy_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>lynx</Platform>
-    <CommandLine>-L "cores\handy_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>ColecoVision</Platform>
-    <CommandLine>a</CommandLine>
-    <Default>false</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>colecovision</Platform>
-    <CommandLine>-L "cores\bluemsx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>dreamcast</Platform>
-    <CommandLine>-L "cores\flycast_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Fairchild Channel F</Platform>
-    <CommandLine>-L "cores\mess_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Magnavox Odyssey 2</Platform>
-    <CommandLine>-L "cores\o2em_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>NEC PC-FX</Platform>
-    <CommandLine>-L "cores\mednafen_pcfx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>pcfx</Platform>
-    <CommandLine>-L "cores\mednafen_pcfx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>NEC TurboGrafx-16</Platform>
-    <CommandLine>-L "cores\mednafen_pce_fast_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>pcengine</Platform>
-    <CommandLine>-L "cores\mednafen_pce_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>pcenginecd</Platform>
-    <CommandLine>-L "cores\mednafen_pce_fast_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>supergrafx</Platform>
-    <CommandLine>-L "cores\mednafen_supergrafx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Nintendo 64</Platform>
-    <CommandLine>-L "cores\parallel_n64_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>n64</Platform>
-    <CommandLine>-L "cores\parallel_n64_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Nintendo 3DS</Platform>
-    <CommandLine>-L "cores\citra_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Nintendo DS</Platform>
-    <CommandLine>-L "cores\desmume_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>nds</Platform>
-    <CommandLine>-L "cores\desmume_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Nintendo Entertainment System</Platform>
-    <CommandLine>-L "cores\nestopia_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>fds</Platform>
-    <CommandLine>-L "cores\nestopia_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>nes</Platform>
-    <CommandLine>-L "cores\nestopia_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>gb</Platform>
-    <CommandLine>-L "cores\gambatte_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Nintendo Game &amp; Watch</Platform>
-    <CommandLine>-L "cores\gw_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>gameandwatch</Platform>
-    <CommandLine>-L "cores\gw_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>gw</Platform>
-    <CommandLine>-L "cores\gw_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Nintendo Game Boy Advance</Platform>
-    <CommandLine>-L "cores\mgba_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>gba</Platform>
-    <CommandLine>-L "cores\mgba_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Nintendo Game Boy Color</Platform>
-    <CommandLine>-L "cores\gambatte_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>gbc</Platform>
-    <CommandLine>-L "cores\gambatte_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-    <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>3ds</Platform>
-    <CommandLine>-L "cores\citra_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Nintendo GameCube</Platform>
-    <CommandLine>-L "cores\dolphin_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>gc</Platform>
-    <CommandLine>-L "cores\dolphin_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>gamecube</Platform>
-    <CommandLine>-L "cores\dolphin_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Nintendo Virtual Boy</Platform>
-    <CommandLine>-L "cores\mednafen_vb_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>virtualboy</Platform>
-    <CommandLine>-L "cores\mednafen_vb_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Nintendo Wii</Platform>
-    <CommandLine>-L "cores\dolphin_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>wii</Platform>
-    <CommandLine>-L "cores\dolphin_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Sega 32X</Platform>
-    <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>sega32x</Platform>
-    <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Sega CD</Platform>
-    <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>segacd</Platform>
-    <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Sega Game Gear</Platform>
-    <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>sg1000</Platform>
-    <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>gamegear</Platform>
-    <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Sega Genesis</Platform>
-    <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>megadrive</Platform>
-    <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Sega Master System</Platform>
-    <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>mastersystem</Platform>
-    <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>msx</Platform>
-    <CommandLine>-L "cores\bluemsx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-    <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>msx2+</Platform>
-    <CommandLine>-L "cores\bluemsx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>msx1</Platform>
-    <CommandLine>-L "cores\bluemsx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>msx2</Platform>
-    <CommandLine>-L "cores\bluemsx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Sinclair ZX Spectrum</Platform>
-    <CommandLine>-L "cores\81_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>mame</Platform>
-    <CommandLine>-L "cores\fbalpha2012_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>fbneo</Platform>
-    <CommandLine>-L "cores\fbneo_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>pc98</Platform>
-    <CommandLine>-L "cores\np2kai_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>SNK Neo Geo AES</Platform>
-    <CommandLine>-L "cores\fbneo_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>neogeo</Platform>
-    <CommandLine>-L "cores\fbneo_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>SNK Neo Geo MVS</Platform>
-    <CommandLine>-L "cores\fbneo_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>neogeocd</Platform>
-    <CommandLine>-L "cores\neocd_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>SNK Neo Geo Pocket</Platform>
-    <CommandLine>-L "cores\mednafen_ngp_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>ngp</Platform>
-    <CommandLine>-L "cores\mednafen_ngp_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>SNK Neo Geo Pocket Color</Platform>
-    <CommandLine>-L "cores\mednafen_ngp_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>ngpc</Platform>
-    <CommandLine>-L "cores\mednafen_ngp_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>pokemini</Platform>
-    <CommandLine>-L "cores\pokemini_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Sony Playstation</Platform>
-    <CommandLine>-L "cores\swanstation_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>psx</Platform>
-    <CommandLine>-L "cores\swanstation_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Sony PSP</Platform>
-    <CommandLine>-L "cores\ppsspp_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>psp</Platform>
-    <CommandLine>-L "cores\ppsspp_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>Super Nintendo Entertainment System</Platform>
-    <CommandLine>-L "cores\snes9x_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>satellaview</Platform>
-    <CommandLine>-L "cores\snes9x_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>snes</Platform>
-    <CommandLine>-L "cores\snes9x_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>sufami</Platform>
-    <CommandLine>-L "cores\snes9x_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>WonderSwan</Platform>
-    <CommandLine>-L "cores\mednafen_wswan_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>wswan</Platform>
-    <CommandLine>-L "cores\mednafen_wswan_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>WonderSwan Color</Platform>
-    <CommandLine>-L "cores\mednafen_wswan_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>wswanc</Platform>
-    <CommandLine>-L "cores\mednafen_wswan_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>vectrex</Platform>
-    <CommandLine>-L "cores\vecx_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>thomson</Platform>
-    <CommandLine>-L "cores\theodore_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <EmulatorPlatform>
-    <Emulator>fe55fce9-f8fd-48cd-8d45-508c6a44367b</Emulator>
-    <Platform>tic80</Platform>
-    <CommandLine>-L "cores\tic80_libretro.dll"</CommandLine>
-    <Default>true</Default>
-    <M3uDiscLoadEnabled>false</M3uDiscLoadEnabled>
-  </EmulatorPlatform>
-  <Emulator>
-    <ApplicationPath>..\PCSX2 1.4.0\pcsx2.exe</ApplicationPath>
-    <CommandLine>--fullscreen</CommandLine>
-    <DefaultPlatform />
-    <ID>1754145d-8e11-4d24-aa0e-0a69da702d3f</ID>
-    <Title>PCSX2</Title>
-    <NoQuotes>false</NoQuotes>
-    <NoSpace>false</NoSpace>
-    <HideConsole>false</HideConsole>
-    <FileNameWithoutExtensionAndPath>false</FileNameWithoutExtensionAndPath>
-    <AutoHotkeyScript>; This section closes PCSX2 when pressing Escape
-$Esc::
-{
-	Process, Close, {{{StartupEXE}}}
-}
-</AutoHotkeyScript>
-    <AutoExtract>false</AutoExtract>
-    <UseStartupScreen>true</UseStartupScreen>
-    <HideAllNonExclusiveFullscreenWindows>false</HideAllNonExclusiveFullscreenWindows>
-    <StartupLoadDelay>5000</StartupLoadDelay>
-    <HideMouseCursorInGame>true</HideMouseCursorInGame>
-    <DisableShutdownScreen>false</DisableShutdownScreen>
-    <AggressiveWindowHiding>false</AggressiveWindowHiding>
-    <UsePauseScreen>true</UsePauseScreen>
-    <PauseAutoHotkeyScript>; No script is required for pausing PCSX2
-</PauseAutoHotkeyScript>
-    <ResumeAutoHotkeyScript>; No script is required for resuming PCSX2
-</ResumeAutoHotkeyScript>
-    <DefaultPauseSettingsPushed>true</DefaultPauseSettingsPushed>
-    <SuspendProcessOnPause>true</SuspendProcessOnPause>
-    <ForcefulPauseScreenActivation>true</ForcefulPauseScreenActivation>
-    <LoadStateAutoHotkeyScript>; PCSX2 loads state with F3 key by default
-Send {F3}
-</LoadStateAutoHotkeyScript>
-    <SaveStateAutoHotkeyScript>; PCSX2 saves state with F1 key by default
-Send {F1}
-</SaveStateAutoHotkeyScript>
-    <ResetAutoHotkeyScript>; Reset Game is not available in PCSX2
-</ResetAutoHotkeyScript>
-    <SwapDiscsAutoHotkeyScript />
-    <ExitAutoHotkeyScript>; PCSX2 has an ugly exit process; this cleans it up visually
-Process, Close, {{{StartupEXE}}}
-</ExitAutoHotkeyScript>
-  </Emulator>
-  <Emulator>
-    <ApplicationPath>..\epsxe\ePSXe.exe</ApplicationPath>
-    <CommandLine>-nogui -slowboot -loadbin</CommandLine>
-    <DefaultPlatform />
-    <ID>b2f982fd-d332-41cb-b891-48795e0ddf5b</ID>
-    <Title>ePSXe</Title>
-    <NoQuotes>false</NoQuotes>
-    <NoSpace>false</NoSpace>
-    <HideConsole>false</HideConsole>
-    <FileNameWithoutExtensionAndPath>false</FileNameWithoutExtensionAndPath>
-    <AutoHotkeyScript />
-    <AutoExtract>false</AutoExtract>
-    <UseStartupScreen>true</UseStartupScreen>
-    <HideAllNonExclusiveFullscreenWindows>false</HideAllNonExclusiveFullscreenWindows>
-    <StartupLoadDelay>5000</StartupLoadDelay>
-    <HideMouseCursorInGame>true</HideMouseCursorInGame>
-    <DisableShutdownScreen>false</DisableShutdownScreen>
-    <AggressiveWindowHiding>false</AggressiveWindowHiding>
-    <UsePauseScreen>true</UsePauseScreen>
-    <PauseAutoHotkeyScript />
-    <ResumeAutoHotkeyScript />
-    <DefaultPauseSettingsPushed>true</DefaultPauseSettingsPushed>
-    <SuspendProcessOnPause>true</SuspendProcessOnPause>
-    <ForcefulPauseScreenActivation>false</ForcefulPauseScreenActivation>
-    <LoadStateAutoHotkeyScript />
-    <SaveStateAutoHotkeyScript />
-    <ResetAutoHotkeyScript />
-    <SwapDiscsAutoHotkeyScript />
-    <ExitAutoHotkeyScript />
-  </Emulator>
-  <Emulator>
-    <ApplicationPath>..\RetroArch\retroarch.exe</ApplicationPath>
-    <CommandLine />
-    <DefaultPlatform />
-    <ID>fe55fce9-f8fd-48cd-8d45-508c6a44367b</ID>
-    <Title>Retroarch</Title>
-    <NoQuotes>false</NoQuotes>
-    <NoSpace>true</NoSpace>
-    <HideConsole>true</HideConsole>
-    <FileNameWithoutExtensionAndPath>false</FileNameWithoutExtensionAndPath>
-    <AutoHotkeyScript />
-    <AutoExtract>false</AutoExtract>
-    <UseStartupScreen>true</UseStartupScreen>
-    <HideAllNonExclusiveFullscreenWindows>false</HideAllNonExclusiveFullscreenWindows>
-    <StartupLoadDelay>5000</StartupLoadDelay>
-    <HideMouseCursorInGame>true</HideMouseCursorInGame>
-    <DisableShutdownScreen>false</DisableShutdownScreen>
-    <AggressiveWindowHiding>false</AggressiveWindowHiding>
-    <UsePauseScreen>true</UsePauseScreen>
-    <PauseAutoHotkeyScript>; No script is required for pausing Retroarch
-</PauseAutoHotkeyScript>
-    <ResumeAutoHotkeyScript>; No script is required for resuming Retroarch
-</ResumeAutoHotkeyScript>
-    <DefaultPauseSettingsPushed>true</DefaultPauseSettingsPushed>
-    <SuspendProcessOnPause>true</SuspendProcessOnPause>
-    <ForcefulPauseScreenActivation>true</ForcefulPauseScreenActivation>
-    <LoadStateAutoHotkeyScript>; Retroarch loads state with F4 key by default
-Send {F4 down}
-Sleep 50
-Send {F4 up}
-</LoadStateAutoHotkeyScript>
-    <SaveStateAutoHotkeyScript>; Retroarch saves state with F2 key by default
-Send {F2 down}
-Sleep 50
-Send {F2 up}
-</SaveStateAutoHotkeyScript>
-    <ResetAutoHotkeyScript>; Retroarch resets game with H key by default
-Send {h down}
-Sleep 50
-Send {h up}
-</ResetAutoHotkeyScript>
-    <SwapDiscsAutoHotkeyScript />
-    <ExitAutoHotkeyScript>; No custom exit script is necessary for Retroarch
-; since it already uses the Escape key by default
-</ExitAutoHotkeyScript>
-  </Emulator>
-</LaunchBox>
+<EmulatorPlatform>
+  <Platform>apple2gs</Platform>
+  <CommandLine>-L "cores\_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>amstradcpc</Platform>
+  <CommandLine>-L "cores\cap32_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>gx4000</Platform>
+  <CommandLine>-L "cores\cap32_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>amigacd32</Platform>
+  <CommandLine>-L "cores\puae_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+  <EmulatorPlatform>
+  <Platform>amiga600</Platform>
+  <CommandLine>-L "cores\puae_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>arcade</Platform>
+  <CommandLine>-L "cores\mame_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Atari 2600</Platform>
+  <CommandLine>-L "cores\stella_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>atari2600</Platform>
+  <CommandLine>-L "cores\stella_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Atari 5200</Platform>
+  <CommandLine>-L "cores\atari800_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>atari5200</Platform>
+  <CommandLine>-L "cores\atari800_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Atari 7800</Platform>
+  <CommandLine>-L "cores\prosystem_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>atari7800</Platform>
+  <CommandLine>-L "cores\prosystem_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>atarist</Platform>
+  <CommandLine>-L "cores\hatari_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>c64</Platform>
+  <CommandLine>-L "cores\vice_x64sc_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Atari Jaguar</Platform>
+  <CommandLine>-L "cores\virtualjaguar_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Atari Lynx</Platform>
+  <CommandLine>-L "cores\handy_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>lynx</Platform>
+  <CommandLine>-L "cores\handy_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>colecovision</Platform>
+  <CommandLine>-L "cores\bluemsx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>dreamcast</Platform>
+  <CommandLine>-L "cores\flycast_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Fairchild Channel F</Platform>
+  <CommandLine>-L "cores\mess_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Magnavox Odyssey 2</Platform>
+  <CommandLine>-L "cores\o2em_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>NEC PC-FX</Platform>
+  <CommandLine>-L "cores\mednafen_pcfx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>pcfx</Platform>
+  <CommandLine>-L "cores\mednafen_pcfx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>NEC TurboGrafx-16</Platform>
+  <CommandLine>-L "cores\mednafen_pce_fast_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>pcengine</Platform>
+  <CommandLine>-L "cores\mednafen_pce_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>pcenginecd</Platform>
+  <CommandLine>-L "cores\mednafen_pce_fast_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>supergrafx</Platform>
+  <CommandLine>-L "cores\mednafen_supergrafx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Nintendo 64</Platform>
+  <CommandLine>-L "cores\parallel_n64_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>n64</Platform>
+  <CommandLine>-L "cores\parallel_n64_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Nintendo 3DS</Platform>
+  <CommandLine>-L "cores\citra_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Nintendo DS</Platform>
+  <CommandLine>-L "cores\desmume_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>nds</Platform>
+  <CommandLine>-L "cores\desmume_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Nintendo Entertainment System</Platform>
+  <CommandLine>-L "cores\nestopia_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>fds</Platform>
+  <CommandLine>-L "cores\nestopia_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>nes</Platform>
+  <CommandLine>-L "cores\nestopia_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>gb</Platform>
+  <CommandLine>-L "cores\gambatte_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Nintendo Game &amp; Watch</Platform>
+  <CommandLine>-L "cores\gw_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>gameandwatch</Platform>
+  <CommandLine>-L "cores\gw_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>gw</Platform>
+  <CommandLine>-L "cores\gw_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Nintendo Game Boy Advance</Platform>
+  <CommandLine>-L "cores\mgba_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>gba</Platform>
+  <CommandLine>-L "cores\mgba_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Nintendo Game Boy Color</Platform>
+  <CommandLine>-L "cores\gambatte_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>gbc</Platform>
+  <CommandLine>-L "cores\gambatte_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+  <EmulatorPlatform>
+  <Platform>3ds</Platform>
+  <CommandLine>-L "cores\citra_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Nintendo GameCube</Platform>
+  <CommandLine>-L "cores\dolphin_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>gc</Platform>
+  <CommandLine>-L "cores\dolphin_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>gamecube</Platform>
+  <CommandLine>-L "cores\dolphin_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Nintendo Virtual Boy</Platform>
+  <CommandLine>-L "cores\mednafen_vb_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>virtualboy</Platform>
+  <CommandLine>-L "cores\mednafen_vb_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Nintendo Wii</Platform>
+  <CommandLine>-L "cores\dolphin_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>wii</Platform>
+  <CommandLine>-L "cores\dolphin_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Sega 32X</Platform>
+  <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>sega32x</Platform>
+  <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Sega CD</Platform>
+  <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>segacd</Platform>
+  <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Sega Game Gear</Platform>
+  <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>sg1000</Platform>
+  <CommandLine>-L "cores\gearsystem_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>gamegear</Platform>
+  <CommandLine>-L "cores\gearsystem_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Sega Genesis</Platform>
+  <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>megadrive</Platform>
+  <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Sega Master System</Platform>
+  <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>mastersystem</Platform>
+  <CommandLine>-L "cores\genesis_plus_gx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>msx</Platform>
+  <CommandLine>-L "cores\bluemsx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+  <EmulatorPlatform>
+  <Platform>msx2+</Platform>
+  <CommandLine>-L "cores\bluemsx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>msx1</Platform>
+  <CommandLine>-L "cores\bluemsx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>msx2</Platform>
+  <CommandLine>-L "cores\bluemsx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Sinclair ZX Spectrum</Platform>
+  <CommandLine>-L "cores\81_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>mame</Platform>
+  <CommandLine>-L "cores\fbalpha2012_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>fbneo</Platform>
+  <CommandLine>-L "cores\fbneo_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>pc98</Platform>
+  <CommandLine>-L "cores\np2kai_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>SNK Neo Geo AES</Platform>
+  <CommandLine>-L "cores\fbneo_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>neogeo</Platform>
+  <CommandLine>-L "cores\fbneo_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>SNK Neo Geo MVS</Platform>
+  <CommandLine>-L "cores\fbneo_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>neogeocd</Platform>
+  <CommandLine>-L "cores\neocd_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>SNK Neo Geo Pocket</Platform>
+  <CommandLine>-L "cores\mednafen_ngp_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>ngp</Platform>
+  <CommandLine>-L "cores\mednafen_ngp_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>SNK Neo Geo Pocket Color</Platform>
+  <CommandLine>-L "cores\mednafen_ngp_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>ngpc</Platform>
+  <CommandLine>-L "cores\mednafen_ngp_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>pokemini</Platform>
+  <CommandLine>-L "cores\pokemini_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Playstation 2</Platform>
+  <CommandLine>-L "cores\pcsx2_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>ps2</Platform>
+  <CommandLine>-L "cores\pcsx2_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Sony Playstation</Platform>
+  <CommandLine>-L "cores\swanstation_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>psx</Platform>
+  <CommandLine>-L "cores\swanstation_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Sony PSP</Platform>
+  <CommandLine>-L "cores\ppsspp_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>psp</Platform>
+  <CommandLine>-L "cores\ppsspp_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>Super Nintendo Entertainment System</Platform>
+  <CommandLine>-L "cores\snes9x_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>satellaview</Platform>
+  <CommandLine>-L "cores\snes9x_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>snes</Platform>
+  <CommandLine>-L "cores\snes9x_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>sufami</Platform>
+  <CommandLine>-L "cores\snes9x_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>WonderSwan</Platform>
+  <CommandLine>-L "cores\mednafen_wswan_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>wswan</Platform>
+  <CommandLine>-L "cores\mednafen_wswan_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>WonderSwan Color</Platform>
+  <CommandLine>-L "cores\mednafen_wswan_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>wswanc</Platform>
+  <CommandLine>-L "cores\mednafen_wswan_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>vectrex</Platform>
+  <CommandLine>-L "cores\vecx_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>thomson</Platform>
+  <CommandLine>-L "cores\theodore_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<EmulatorPlatform>
+  <Platform>tic80</Platform>
+  <CommandLine>-L "cores\tic80_libretro.dll"</CommandLine>
+</EmulatorPlatform>
+<Emulator>
+  <ApplicationPath>..\PCSX2 1.4.0\pcsx2.exe</ApplicationPath>
+  <CommandLine>--fullscreen</CommandLine>
+</Emulator>
+<Emulator>
+  <ApplicationPath>..\epsxe\ePSXe.exe</ApplicationPath>
+  <CommandLine>-nogui -slowboot -loadbin</CommandLine>
+</Emulator>
