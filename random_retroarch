@@ -48,7 +48,7 @@ function select_console(){
 	#snes
 	#mastersystem
 	#gw"
-	#CONSOLES="pcenginecd"
+	#CONSOLES="atarist"
 	# get the number of console
 	max_console=$(echo "$CONSOLES" | wc -l)
 	# echo "max_console: $max_console"
@@ -259,8 +259,10 @@ function select_game(){
 		search_rom
 	fi
 	# 
-	current_console=$(echo "${rom}" | sed -e 's/.*\\\\\(.*\)\\\\.*/\1/')
-	console=${current_console}
+	if [[ "${favorites}" == "true" ]]; then 
+		current_console=$(echo "${rom}" | sed -e 's/.*\\\\\(.*\)\\\\.*/\1/')
+		console=${current_console}
+	fi
 	# TODO: improve categorie search
 	if [[ -v categorie ]]; then
 		# if the rom var is empty find any matching rom 
