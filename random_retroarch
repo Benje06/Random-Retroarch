@@ -1,6 +1,6 @@
 #!/bin/bash
-set -x
-set -v
+#set -x
+#set -v
 
 # script and utility path wherer all files from git are
 SCRIPT_PATH="/mnt/d/Telechargements/emulations/script"
@@ -363,7 +363,7 @@ function start_game(){
 			# force specific  standalone emulator to be use for some console
 			case ${current_console} in
 				"atarist")
-					echo '"'D:\\Jeux steam\\retro\\hatari-2.4.1_windows64\\hatari.exe'"' '"'${ROM_PATH_WIN}/${current_console}/${rom}'"'
+					echo '"'D:\\Jeux steam\\retro\\hatari-2.6.0_windows64\\hatari.exe'"' '"'${ROM_PATH_WIN}/${current_console}/${rom}'"'
 					exit
 					;;
 				# "psx")
