@@ -269,7 +269,7 @@
 </EmulatorPlatform>
 <EmulatorPlatform>
   <Platform>mame</Platform>
-  <CommandLine>-L "cores\fbalpha2012_libretro.dll"</CommandLine>
+  <CommandLine>-L "cores\mame_libretro.dll"</CommandLine>
 </EmulatorPlatform>
 <EmulatorPlatform>
   <Platform>fbneo</Platform>

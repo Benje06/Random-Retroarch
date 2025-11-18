@@ -11,4 +11,4 @@ stream="twitch"
 # to make the gamelist
 # saga="Zelda"
 # FAVORITES if true will use the retroarch favorites files to build the gamelist 
-favorites="true"
+favorites="false"
