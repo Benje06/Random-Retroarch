@@ -1,6 +1,6 @@
 #!/bin/bash
-set -x
-set -v
+#set -x
+#set -v
 
 # script and utility path wherer all files from git are
 SCRIPT_PATH="/mnt/d/Telechargements/emulations/script"
@@ -101,7 +101,7 @@ function get_gamelist(){
 		# search for current console entry in the global _launchedgames.txt file
 		# and search all that is not in _launchedgames from the game categorie file
 		# to construct the game list
-		gamelist=$(grep -i "${current_console}" "${ROM_PATH}/_launchedgames.txt" |cut -d'_' -f2- | sed 's/ (.*//' | sed '/ $/d'| grep -viFf - ${ROM_PATH}/${current_console}/${categorie}_list.txt)
+		gamelist=$(grep -i "${current_console}" "${SCRIPT_PATH}/_launchedgames.txt" |cut -d'_' -f2- | sed 's/ (.*//' | sed '/ $/d'| grep -viFf - ${ROM_PATH}/${current_console}/${categorie}_list.txt)
 	else 
 		# if a saga is define
 		if [[ -v saga ]] ;then
@@ -201,10 +201,10 @@ function manage_multi_entry_and_cue(){
 		rom=$(echo "${tmpname}" |  grep "\.cue")
 	fi
 	if [[ ${current_console} == 'pcenginecd' ]]; then
-		rom=$(echo "${tmpname}" |  sed -e 's/\.bin/\.cue/g' -e 's/\.img/\.cue/g' )
+		rom=$(echo "${tmpname}" |  sed -e 's/\.bin/\.cue/g' -e 's/\.img/\.cue/g' -e 's/\.sub/\.cue/g' )
 	fi
 	if [[ ${current_console} == 'neogeocd' ]]; then
-		rom=$(echo "${tmpname}" |  sed -e 's/\.ccd/\.cue/g' -e 's/\.img/\.cue/g' )
+		rom=$(echo "${tmpname}" |  sed -e 's/\.ccd/\.cue/g' -e 's/\.img/\.cue/g' -e 's/\.sub/\.cue/g' )
 	fi
 }
 
@@ -279,17 +279,17 @@ function select_game(){
 	manage_multi_entry_and_cue
 	#echo "$gamelist"
 	## if file for launchedgame doesn't exist create it
-	if [[ ! -f "${categorie}_launchedgames.txt" ]]; then 
-		touch ${categorie}_launchedgames.txt
+	if [[ ! -f "${SCRIPT_PATH}/${categorie}_launchedgames.txt" ]]; then 
+		touch ${SCRIPT_PATH}/${categorie}_launchedgames.txt
 	fi
 	# if the game is not found in the launchedgames list file add it
-	if [[ $(grep -c -F "${console}_${rom}" "${categorie}_launchedgames.txt") == 0 ]] ; then 
-		echo "${console}_${rom}" >> "${categorie}_launchedgames.txt"
+	if [[ $(grep -c -F "${console}_${rom}" "${SCRIPT_PATH}/${categorie}_launchedgames.txt") == 0 ]] ; then 
+		echo "${console}_${rom}" >> "${SCRIPT_PATH}/${categorie}_launchedgames.txt"
 		is_a_listed_game=0 # var for the until loop
 	fi
 	# clear the laucnhed games file if the number of game for this console is reached
-	if [[ $(grep -c -F "${console}" "${categorie}_launchedgames.txt") -ge ${maxgame} ]] ; then 
-		sed "/${console}.*/d" -i "${categorie}_launchedgames.txt"
+	if [[ $(grep -c -F "${console}" "${SCRIPT_PATH}/${categorie}_launchedgames.txt") -ge ${maxgame} ]] ; then 
+		sed "/${console}.*/d" -i "${SCRIPT_PATH}/${categorie}_launchedgames.txt"
 	fi
 }
 
