@@ -403,10 +403,10 @@ until [[ ${is_a_listed_game} == 0 ]]; do
 		rom=$(echo "${rom}" | sed -e 's/.*\\//' -e 's/",//')
 	else
 		if [[ "${console}" == "" ]]; then
-			while [[ "${console}" == "" ]] ; do 
+			while [[ "${console}" == "" || ! -f "${currentPlaylist}" ]] ; do 
 				select_console
+				get_gamelist
 			done
-			get_gamelist
 		fi
 		#currentPlaylist="${ROM_PATH}/${current_console}/gamelist.xml" # playlist directory
 		if [[ -f "${currentPlaylist}" ]] ;then # if there is gamelist in the directory it's that there is some game so... 
