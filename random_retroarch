@@ -22,52 +22,29 @@ function randomize(){
 
 function select_console(){
 	### CONSOLE
-	cd "${ROM_PATH}"
 	# list console from directory
-	CONSOLES=$(ls -dX */| sed "s/\///") 
+	CONSOLES=$(ls -dX */| sed "s/\///")
+	# exclude of some console
+	for excluded_console in $EXCLUDED_CONSOLES; do 
+		CONSOLES=$(echo "$CONSOLES" | sed "/${excluded_console}/d")
+	done
 	# or define a list of console directory
 	#CONSOLES="megadrive
 	#nes
 	#snes
 	#mastersystem
 	#gw"
-	#CONSOLES="pc98"
+	#CONSOLES="wswanc"
 	# get the number of console
 	max_console=$(echo "$CONSOLES" | wc -l)
 	# echo "max_console: $max_console"
-	
-	#generate random number for console selection
-	randomize $max_console
-	
-	i=0
-	for current_console in ${CONSOLES}; do
-		# exclude of some console
-		if [[ 	${i} == ${random_number} &&
-				${current_console} != "prboom" &&
-				${current_console} != "mrboom" &&
-				${current_console} != "doom" &&
-				${current_console} != "tyrquake" &&
-				${current_console} != "solarus" &&
-				${current_console} != "openbor" &&
-				${current_console} != "lutro" &&
-				${current_console} != "apple2gs" &&
-				${current_console} != "amiga600" &&
-				${current_console} != "amstradcpc" &&
-				${current_console} != "tic80" &&
-				${current_console} != "thomson" &&
-				${current_console} != "virtualboy" &&
-				${current_console} != "satellaview" &&
-				${current_console} != "easyrpg"
-			]]; then
-			console=${current_console}
-			echo -e " Console: ${console}\tRandom number: ${random_number}"
-			break
-		fi
-		i=$(($i+1))
+	while [[ "${console}" == "" || ! -f "${currentPlaylist}" ]] ; do
+		#generate random number for console selection
+		randomize $max_console
+		console=$(echo "${CONSOLES}" | sed -n "$((random_number + 1))p")
+		get_gamelist
 	done
-	# manually force current_console
-	#current_console="snes"
-	#echo -e "${current_console}\t${random_number_console}" 
+	echo -e " Console: ${console}\tRandom number: ${random_number}"	
 }
 
 function get_gamelist(){
@@ -76,34 +53,34 @@ function get_gamelist(){
 	# 	else
 	#		if on linux from the gamelist.xml file 
 	#		if on windows from listing of console directory
-	currentPlaylist="${ROM_PATH}/${current_console}/gamelist.xml"
+	currentPlaylist="${ROM_PATH}/${console}/gamelist.xml"
 	
 	# if a categorie is define and the file that define the list of game of this categorie exist
-	if [[ -v categorie  && -f "${ROM_PATH}/${current_console}/${categorie}_list.txt" ]] ;then 
+	if [[ -v categorie  && -f "${ROM_PATH}/${console}/${categorie}_list.txt" ]] ;then 
 		echo " Categorie: ${categorie}"
 		# search for current console entry in the global _launchedgames.txt file
 		# and search all that is not in _launchedgames from the game categorie file
 		# to construct the game list
-		gamelist=$(grep -i "${current_console}" "${SCRIPT_PATH}/_launchedgames.txt" |cut -d'_' -f2- | sed 's/ (.*//' | sed '/ $/d'| grep -viFf - ${ROM_PATH}/${current_console}/${categorie}_list.txt)
+		gamelist=$(grep -i "${console}" "${SCRIPT_PATH}/_launchedgames.txt" |cut -d'_' -f2- | sed 's/ (.*//' | sed '/ $/d'| grep -viFf - ${ROM_PATH}/${console}/${categorie}_list.txt)
 	else 
 		# if a saga is define
 		if [[ -v saga ]] ;then
 			echo " Saga: ${saga}"
 			# get all game of the current console that contains saga name
-			gamelist=$(ls "${ROM_PATH}/${current_console}" | grep -ve "\.srm" -ve "\.txt" -ve "\.xml" -ve "/" | grep -iE "${saga}"|sort -n)
+			gamelist=$(ls "${ROM_PATH}/${console}" | grep -ve "\.srm" -ve "\.txt" -ve "\.xml" -ve "\.html" -ve "/" | grep -iE "${saga}"|sort -n)
 		# else get list of games
 		else			
 			if [ $(cat /proc/version | grep -c microsoft) == 0 ] ; then
 				# LINUX json playlist
-				echo "Linux"
+				echo -e " ENV: Linux"
 				gamelist=$(grep '"path' "$currentPlaylist" | cut -d ':' -f2 | sed 's/",$//' | sed 's/^ "//' )
 			else
-				echo "Windows"
+				echo -e " ENV: Windows"
 				# windows new format not compressed
 				# gamelist retroarch
 				#old #gamelist=$(grep '"path' "$RETROARCH_PLAYLIST/$currentPlaylist" | cut -d '"' -f4 | sed 's/",$//' | sed 's/^ "//')
 				#gamelist=$(grep "<path>" $currentPlaylist | sed "s/.*<path>\.\/\(.*\)<\/path>/\1/")
-				gamelist=$(ls -p "${ROM_PATH}/${current_console}" | grep -ve "\.srm" -ve "\.txt" -ve "\.xml" -ve "/") #list game in directory
+				gamelist=$(ls -p "${ROM_PATH}/${console}" | grep -ve "\.srm" -ve "\.txt" -ve "\.xml" -ve "/") #list game in directory
 			fi
 		fi
 	fi
@@ -119,19 +96,19 @@ function search_rom(){
 	other_country="E Eu Europe UE U USA JUE JE J Japan Unl PD W K AVE"
 	for country in ${main_country}; do # check Fr
 		if [[ "${tmpname}" == "" ]] ; then # good dump [!]
-			tmpname=$(ls "${ROM_PATH}/${current_console}/" | grep -ie "${rom_w_ext} (${country}) \[!\]\.") 
+			tmpname=$(ls "${ROM_PATH}/${console}/" | grep -ie "${rom_w_ext} (${country}) \[!\]\.") 
 		fi
 		if [[ "${tmpname}" == "" ]] ; then # without information
-			tmpname=$(ls "${ROM_PATH}/${current_console}/" | grep -ie "${rom_w_ext} (${country})\.") 
+			tmpname=$(ls "${ROM_PATH}/${console}/" | grep -ie "${rom_w_ext} (${country})\.") 
 		fi
 		if [[ "${tmpname}" == "" ]] ; then # with anything inside []
-			tmpname=$(ls "${ROM_PATH}/${current_console}/" | grep -ie "${rom_w_ext} (${country}) \[.*\]\.") 
+			tmpname=$(ls "${ROM_PATH}/${console}/" | grep -ie "${rom_w_ext} (${country}) \[.*\]\.") 
 		fi
 		if [[ "${tmpname}" == "" ]] ; then # with anything inside () and []
-			tmpname=$(ls "${ROM_PATH}/${current_console}/" | grep -ie "${rom_w_ext} (${country}) (.*) \[.*\]\.")
+			tmpname=$(ls "${ROM_PATH}/${console}/" | grep -ie "${rom_w_ext} (${country}) (.*) \[.*\]\.")
 		fi
 		if [[ "${tmpname}" == "" ]] ; then # with anything inside ()
-			tmpname=$(ls "${ROM_PATH}/${current_console}/" | grep -ie "${rom_w_ext} (${country}) (.*)\.") 
+			tmpname=$(ls "${ROM_PATH}/${console}/" | grep -ie "${rom_w_ext} (${country}) (.*)\.") 
 		fi
 		if [[ "${tmpname}" != "" ]] ; then # if found set it to the rom var
 			manage_multi_entry_and_cue
@@ -142,10 +119,10 @@ function search_rom(){
 	if [[ $1 != "" ]];then
 		for country in ${other_country}; do # check all other with trad [T+...] given in parameter
 			if [[ "${tmpname}" == "" ]] ; then # trad [T+...]
-				tmpname=$(ls "${ROM_PATH}/${current_console}/" | grep -ie "${rom_w_ext} (${country}) \[${1}.*\]\.") 
+				tmpname=$(ls "${ROM_PATH}/${console}/" | grep -ie "${rom_w_ext} (${country}) \[${1}.*\]\.") 
 			fi
 			if [[ "${tmpname}" == "" ]] ; then # anything trad Fr [T+...]
-				tmpname=$(ls "${ROM_PATH}/${current_console}/" | grep -ie "${rom_w_ext} (${country}) (.*) \[${1}.*\]\.") 
+				tmpname=$(ls "${ROM_PATH}/${console}/" | grep -ie "${rom_w_ext} (${country}) (.*) \[${1}.*\]\.") 
 			fi
 			if [[ "${tmpname}" != "" ]] ; then # if found set it to the rom var
 				manage_multi_entry_and_cue
@@ -155,19 +132,19 @@ function search_rom(){
 	else
 		for country in ${other_country}; do # check all other without trad
 			if [[ "${tmpname}" == "" ]] ; then # good dump [!]
-				tmpname=$(ls "${ROM_PATH}/${current_console}/" | grep -ie "${rom_w_ext} (${country}) \[!\]\.") 
+				tmpname=$(ls "${ROM_PATH}/${console}/" | grep -ie "${rom_w_ext} (${country}) \[!\]\.") 
 			fi
 			if [[ "${tmpname}" == "" ]] ; then # without information
-				tmpname=$(ls "${ROM_PATH}/${current_console}/" | grep -ie "${rom_w_ext} (${country})\.") 
+				tmpname=$(ls "${ROM_PATH}/${console}/" | grep -ie "${rom_w_ext} (${country})\.") 
 			fi
 			if [[ "${tmpname}" == "" ]] ; then # with anything inside []
-				tmpname=$(ls "${ROM_PATH}/${current_console}/" | grep -ie "${rom_w_ext} (${country}) \[.*\]\.") 
+				tmpname=$(ls "${ROM_PATH}/${console}/" | grep -ie "${rom_w_ext} (${country}) \[.*\]\.") 
 			fi
 			if [[ "${tmpname}" == "" ]] ; then # with anything inside () and []
-				tmpname=$(ls "${ROM_PATH}/${current_console}/" | grep -ie "${rom_w_ext} (${country}) (.*) \[.*\]\.") 
+				tmpname=$(ls "${ROM_PATH}/${console}/" | grep -ie "${rom_w_ext} (${country}) (.*) \[.*\]\.") 
 			fi
 			if [[ "${tmpname}" == "" ]] ; then # with anything inside ()
-				tmpname=$(ls "${ROM_PATH}/${current_console}/" | grep -ie "${rom_w_ext} (${country}) (.*)\.") 
+				tmpname=$(ls "${ROM_PATH}/${console}/" | grep -ie "${rom_w_ext} (${country}) (.*)\.") 
 			fi
 			if [[ "${tmpname}" != "" ]] ; then # if found set it to the rom var
 				manage_multi_entry_and_cue
@@ -184,11 +161,8 @@ function manage_multi_entry_and_cue(){
 	else 
 		rom=$(echo "${tmpname}" |  grep "\.cue")
 	fi
-	if [[ ${current_console} == 'pcenginecd' ]]; then
+	if [[ ${console} == 'pcenginecd' || ${console} == 'neogeocd' ]]; then
 		rom=$(echo "${tmpname}" |  sed -e 's/\.bin/\.cue/g' -e 's/\.img/\.cue/g' -e 's/\.sub/\.cue/g' )
-	fi
-	if [[ ${current_console} == 'neogeocd' ]]; then
-		rom=$(echo "${tmpname}" |  sed -e 's/\.ccd/\.cue/g' -e 's/\.img/\.cue/g' -e 's/\.sub/\.cue/g' )
 	fi
 }
 
@@ -207,19 +181,8 @@ function select_game(){
 	fi
 	# randomly choose a game from the playlist
 	randomize ${maxgame}
-	# select the game matching random number position in the playlist
-	i=0
-	OIFS=$IFS
-	IFS=$'\n'
-	for rom in ${gamelist}; do
-		if [ ${i} == ${random_number} ]; then
-			echo -e " Game: ${rom}\tRandom number: ${random_number}"
-			break
-		fi
-		i=$(($i+1))
-	done
-	IFS=$OIFS
-	
+	rom=$(echo "${gamelist}" | sed -n "$((random_number + 1))p")
+	echo -e " ROM: ${rom}\tRandom number: ${random_number}"
 	#remove selected rom from the gamelist
 	rom_escaped=$(echo "${rom}" | sed 's/[][]/\\&/g')
 	gamelist=$(echo "$gamelist" | sed "/${rom_escaped}/d")
@@ -227,12 +190,13 @@ function select_game(){
 	
 	# list all roms that contains rom name
 	rom=$(echo "${rom}" | sed 's/\&amp;/\&/g' )
-	#rom="rom to be tested"
-	rom_w_ext=$(echo "${rom}" |sed -e 's/ (.*)//g' -e 's/ \[.*\]//g' -e 's/\..*//g') # remove extention in rom name depend if name come from xml or file list
+	# TO FORCE ROM 
+	#rom="SD Gundam - Operation U.C. (Japan)"
+	rom_w_ext=$(echo "${rom}" |sed -e 's/ (.*)//g' -e 's/ \[.*\]//g' -e 's/\....$//g') # remove extention in rom name depend if name come from xml or file list
 
 	#echo "rom: ${rom}" 
 	#echo "all rom matching name ${rom_w_ext}: "
-	#echo "	$(ls "${ROM_PATH}/${current_console}/" | grep -ie "^${rom_w_ext}")" 
+	#echo "	$(ls "${ROM_PATH}/${console}/" | grep -ie "^${rom_w_ext}")" 
 
 	# translation string inside rom name to be search (set to empty aka "" for no translation search)
 	trad="T+Fre"
@@ -248,15 +212,15 @@ function select_game(){
 	fi
 	# 
 	if [[ "${favorites}" == "true" ]]; then 
-		current_console=$(echo "${rom}" | sed -e 's/.*\\\\\(.*\)\\\\.*/\1/')
-		console=${current_console}
+		console=$(echo "${rom}" | sed -e 's/.*\\\\\(.*\)\\\\.*/\1/')
+		console=${console}
 	fi
 	# TODO: improve categorie search
 	if [[ -v categorie ]]; then
 		# if the rom var is empty find any matching rom 
 		if [[ "${tmpname}" == "" ]] ; then 
 			# TODO: manage r-type 3 / ganada && multiple rom matching
-			rom=$(ls "${ROM_PATH}/${current_console}/" | grep -ie "${rom_w_ext}.*\.")
+			rom=$(ls "${ROM_PATH}/${console}/" | grep -ie "${rom_w_ext}.*\.")
 		fi
 	fi
 
@@ -303,7 +267,7 @@ function get_core(){
 					core=$(echo "${cores}"| sed -n "$((random_number + 1))p" | sed -e 's/.*\\//' -e 's/\..*//')
 					core=$(grep "$core" $EMULATOR_DEF_PATH  | sed 's/.*>\(.*\)<.*/\1/' | head -n 1)
 				else
-					core=$(grep -A1 ">${current_console}<" "${EMULATOR_DEF_PATH}" | grep Command | sed 's/.*>\(.*\)<.*/\1/')
+					core=$(grep -A1 ">${console}<" "${EMULATOR_DEF_PATH}" | grep Command | sed 's/.*>\(.*\)<.*/\1/')
 				fi
 				#echo ${core}
 			# fi
@@ -313,21 +277,25 @@ function get_core(){
 
 function generate_obs_title(){
 	# generate html for obs from template file
-	sed -e "s/CONSOLE/${current_console}/g" -e "s/CURRENTGAME/${current_game}/g" "${SCRIPT_PATH}/retro.html.template" >  "${SCRIPT_PATH}/retro.html"
-	sed -e "s/CONSOLE/${current_console}/g" -e "s/CURRENTGAME/${current_game}/g" "${SCRIPT_PATH}/retro_video.html.template" >  "${SCRIPT_PATH}/retro_video.html"
+	sed -e "s/CONSOLE/${console}/g" -e "s/CURRENTGAME/${current_game}/g" "${SCRIPT_PATH}/retro.html.template" >  "${SCRIPT_PATH}/retro.html"
+	sed -e "s/CONSOLE/${console}/g" -e "s/CURRENTGAME/${current_game}/g" "${SCRIPT_PATH}/retro_video.html.template" >  "${SCRIPT_PATH}/retro_video.html"
 }
 
 function set_stream_title(){
 	# generate script content to set the good title
 	title=$( echo "${current_game}" |  sed "s/'/'\"'\"'/g" | sed 's/(PD)//')
-	console_name=$(grep "<System>" "${ROM_PATH}/${current_console}/gamelist.xml" | sed -e 's/.*<System>//' -e 's/<\/.*//')
+	console_name=$(grep "<System>" "${ROM_PATH}/${console}/gamelist.xml" | sed -e 's/.*<System>//' -e 's/<\/.*//')
 	if [[ -v categorie ]] ; then
 		sed -e "s/TITLE/${title} un ${categorie} sur ${console_name}/g"  "${SCRIPT_PATH}/set_game_title.sh" >  "${SCRIPT_PATH}/set_current_game_title.sh"
 	else
 		sed -e "s/TITLE/${title} sur ${console_name}/g"  "${SCRIPT_PATH}/set_game_title.sh" >  "${SCRIPT_PATH}/set_current_game_title.sh"
 	fi
 	# call the api script to change twitch title
-	bash "${SCRIPT_PATH}/set_current_game_title.sh"
+	ret=$(bash "${SCRIPT_PATH}/set_current_game_title.sh")
+	if [[ $(echo "${ret}" | grep -c "error") != 0 ]];then
+		echo -n " Cannot set stream title: "
+		echo " ${ret}"
+	fi
 }
 
 function start_game(){
@@ -335,15 +303,14 @@ function start_game(){
 	# on windows generated html for obs 
 	# and execute twitch api command to change stream title
 	if [ $(cat /proc/version | grep -c microsoft) == 0 ] ; then
-		retroarch ${core} "${ROM_PATH}/${current_console}/${rom}"
+		retroarch ${core} "${ROM_PATH}/${console}/${rom}"
 	else
 		# rom="SD Ultra Battle - Seven & Ultraman + ST BIOS (ST) [h1][o1].smc"
-		# current_console="snes"
-		echo " core: ${core}"
-		echo " rom: ${rom}"
+		# console="snes"
+		echo " Core: ${core}"
 		if [ "${core}" != "" ] ; then
 			current_game=$(echo ${rom%.*} |sed -e "s/&/\\\&/g")
-			echo " game ${current_game}"
+			echo " Game: ${current_game}"
 			if [[ -v obs ]]; then
 				generate_obs_title
 			fi
@@ -351,23 +318,23 @@ function start_game(){
 				set_stream_title
 			fi 
 			# force specific  standalone emulator to be use for some console
-			case ${current_console} in
+			case ${console} in
 				"atarist")
-					echo '"'D:\\Jeux steam\\retro\\hatari-2.6.0_windows64\\hatari.exe'"' '"'${ROM_PATH_WIN}/${current_console}/${rom}'"'
+					echo '"'D:\\Jeux steam\\retro\\hatari-2.6.0_windows64\\hatari.exe'"' '"'${ROM_PATH_WIN}/${console}/${rom}'"'
 					exit
 					;;
 				"3ds")
-					echo '"'D:\\Jeux steam\\retro\\citra\\citra-qt.exe'"' '"'${ROM_PATH_WIN}/${current_console}/${rom}'"'
+					echo '"'D:\\Jeux steam\\retro\\citra\\citra-qt.exe'"' '"'${ROM_PATH_WIN}/${console}/${rom}'"'
 					exit
 					;;
 				"pc98")
 					if [[ "${rom}" == "Policenauts.cmd" ]]; then
-						echo '"'${ROM_PATH_WIN}/${current_console}/${rom%.cmd}/np21nt.exe'"'
+						echo '"'${ROM_PATH_WIN}/${console}/${rom%.cmd}/np21nt.exe'"'
 						exit
 					fi
 					;;
 				"ps2")
-					echo '"'D:\\Jeux steam\\retro\\PCSX2 1.4.0\\pcsx2.exe'"' --fullscreen '"'${ROM_PATH_WIN}/${current_console}/${rom}'"'
+					echo '"'D:\\Jeux steam\\retro\\PCSX2 1.4.0\\pcsx2.exe'"' --fullscreen '"'${ROM_PATH_WIN}/${console}/${rom}'"'
 					exit
 					;;
 				# "psx")
@@ -377,39 +344,27 @@ function start_game(){
 
 			esac
 			# echo the return for windows batch execute command
-			echo "${RETROARCH_PATH_WIN}\retroarch.exe -f " ${core} '"'${ROM_PATH_WIN}\\${current_console}\\${rom}'"'
+			echo "${RETROARCH_PATH_WIN}\retroarch.exe -f " ${core} '"'${ROM_PATH_WIN}\\${console}\\${rom}'"'
 		else # echo no core found for the console
-			echo "set /p end=No core for ${current_console}"
+			echo "set /p end=No core for ${console}"
 		fi
 	fi
 }
 
 ### Main 
-# set console
-#console=""
-#while [[ ${console} == "" ]] ; do #
-#	select_console
-#done
-#get_gamelist
-
 is_a_listed_game=1
 console=""
+cd "${ROM_PATH}"
 until [[ ${is_a_listed_game} == 0 ]]; do
 	if [[ "${favorites}" == "true" ]]; then 
 		cores=$(grep -e \"core_path "${RETROARCH_PATH}/content_favorites.lpl")
 		gamelist=$(grep -e \"path "${RETROARCH_PATH}/content_favorites.lpl" | sed -e 's/.* "//' -e 's/",//')
 		select_game
-		#current_console=$(echo "${rom}" | sed -e 's/.*\\\\\(.*\)\\\\.*/\1/')
-		#console=${current_console}
 		rom=$(echo "${rom}" | sed -e 's/.*\\//' -e 's/",//')
 	else
 		if [[ "${console}" == "" ]]; then
-			while [[ "${console}" == "" || ! -f "${currentPlaylist}" ]] ; do 
-				select_console
-				get_gamelist
-			done
+			select_console
 		fi
-		#currentPlaylist="${ROM_PATH}/${current_console}/gamelist.xml" # playlist directory
 		if [[ -f "${currentPlaylist}" ]] ;then # if there is gamelist in the directory it's that there is some game so... 
 			select_game
 		fi
