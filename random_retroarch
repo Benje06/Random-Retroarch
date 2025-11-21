@@ -366,14 +366,15 @@ function start_game(){
 						exit
 					fi
 					;;
+				"ps2")
+					echo '"'D:\\Jeux steam\\retro\\PCSX2 1.4.0\\pcsx2.exe'"' --fullscreen '"'${ROM_PATH_WIN}/${current_console}/${rom}'"'
+					exit
+					;;
 				# "psx")
 				#	echo '"'D:\\Jeux steam\\retro\\epsxe\\epsxe.exe'"' -nogui  -loadbin '"'${rom}'"'
 				#	exit
 				#	;;
-				#"ps2")
-				#	echo '"'D:\\Jeux steam\\retro\\PCSX2 1.4.0\\pcsx2.exe'"' --fullscreen '"'${ROM_PATH_WIN}/${current_console}/${rom}'"'
-				#	exit
-				#	;;
+
 			esac
 			# echo the return for windows batch execute command
 			echo "${RETROARCH_PATH_WIN}\retroarch.exe -f " ${core} '"'${ROM_PATH_WIN}\\${current_console}\\${rom}'"'
