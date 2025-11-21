@@ -21,6 +21,9 @@ stream="twitch"
 # if true will use the retroarch favorites files to build the gamelist 
 favorites="false"
 
+### EXCLUDED
+EXCLUDED_CONSOLES="prboom mrboom doom tyrquake solarus openbor lutro apple2gs amiga600 amstradcpc tic80 thomson virtualboy satellaview easyrpg"
+
 ### PATHS
 ## WINDOWS
 # paths seen from native windows apps
