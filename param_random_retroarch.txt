@@ -1,14 +1,41 @@
-# OBS if true will generate the html page (retro.html) based on the template (retro.html.templte) for obs
+### OBS 
+# if true will generate the html page (retro.html) based on the template (retro.html.templte) for obs
 # with the console name/logo, jacquettes/images from scrapping and game's name
 obs="true"
-# STREAM if set to twitch (the only supported) will generate and launch the script (set_current_game_title.sh) 
-# to change the stream name from the template set_game_title.sh
+
+### STREAM
+# if set to twitch (the only supported) will generate from the template "set_game_title.sh" the script "set_current_game_title.sh"
+# and launch it to change the stream name 
 stream="twitch"
-# CATEGORIE if uncommented will search for file in the console directory named ${categorie}_list.txt 
-# to make the gamelist
+
+### CATEGORIES
+# if uncommented, it will search for a file, in the console directory, named ${categorie}_list.txt to make the gamelist
+# the file ${categorie}_list.txt (ex: shmup_list.txt) must contains exactly same names as rom's names without the rom or achive extention
 #categorie="shmup"
-# SAGA if uncommented will search the string in game's names (non case sensitive)
-# to make the gamelist
+
+### SAGA
+# if uncommented, it will search the string specified in game's names (non case sensitive) to make the gamelist
 # saga="Zelda"
-# FAVORITES if true will use the retroarch favorites files to build the gamelist 
+
+### FAVORITES
+# if true will use the retroarch favorites files to build the gamelist 
 favorites="false"
+
+### PATHS
+## WINDOWS
+# paths seen from native windows apps
+RETROARCH_PATH_WIN="D:\RetroArch"
+ROM_PATH_WIN="e:\\rom_unpack"
+
+## WSL and LINUX 
+# RETROARCH config directory
+# seen from windows wsl
+RETROARCH_PATH="/mnt/d/RetroArch"
+# or seen from linux ( ~/.config/retroarch/)
+# RETROARCH_PATH="~/.config/retroarch/"
+
+# ROM path wsl and linux
+ROM_PATH="/mnt/e/rom_unpack"
+
+# core definition for windows
+EMULATOR_DEF_PATH="${SCRIPT_PATH}/Emulators.xml"

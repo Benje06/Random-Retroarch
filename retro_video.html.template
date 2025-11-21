@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<meta http-equiv="refresh" content="30">
+<html>
+	<head></head>
+	<style>
+		::-webkit-scrollbar {
+			display: none;
+		}
+
+		body {
+			border: 0px;
+			padding: 0px;
+			margin: 0px;
+			background-color: rgba(0, 0, 0, 1);
+			overflow: hidden;
+		}
+
+		.GameMsgContener {
+			background: rgba(77, 77, 77, 1);
+			padding: 0px;
+			margin-left: 0px;
+			height:100%;
+		}
+		
+		.TxtGameVideo{
+			display: block;
+			color: rgb(255, 255, 255);
+			font-size: 52px;
+			font-family: 'Alef';
+			text-align:center;
+			word-break: break-word;
+			background-color: rgba(0, 0, 0, 1);
+			#border: solid white 1px;
+		}
+
+		.video{
+			border-radius: 8px;
+			width: 100%;
+            opacity: 0;
+			transition: opacity 2s ease-in-out;
+		}
+
+		video.fade-in {
+			opacity: 1;
+			transition: opacity 2s ease-in-out;
+		}
+
+		video.fade-out {
+			opacity: 0;
+			transition: opacity 2s ease-in-out;
+		}
+		
+	</style>
+    <script>
+		// Fade in on page load
+		window.addEventListener('DOMContentLoaded', () => {
+			 setTimeout(() => {
+				const video = document.querySelector('video');
+				if (video) {
+					video.classList.add('fade-in');
+				}
+			}, 10); // slight delay triggers transition smoothly
+		});
+
+		// Fade out before page unload (refresh/navigation)
+		window.addEventListener('beforeunload', (event) => {
+			const video = document.querySelector('video');
+			if (video) {
+				video.classList.remove('fade-in');
+				video.classList.add('fade-out');
+			}
+		});
+	</script>
+	<body>
+    	<div class="GameMsgContener">
+            <div class="TxtGameVideo">
+                <video class="video" width="100%" autoplay muted loop>
+                    <source src="../../../../E:/rom_unpack/CONSOLE/media/videos/CURRENTGAME.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+	</body>
+</html>

@@ -1,27 +1,10 @@
 #!/bin/bash
-#set -x
+set -x
 #set -v
 
 # script and utility path wherer all files from git are
 SCRIPT_PATH="/mnt/d/Telechargements/emulations/script"
 
-# paths seen from windows
-RETROARCH_WIN_PATH="D:\RetroArch"
-ROM_PATH_WIN="e:\\rom_unpack"
-
-# paths seen from windows wsl
-RETROARCH_PATH="/mnt/d/RetroArch"
-RETROARCH_WSL_PATH="/mnt/d/Jeux steam/retro/RetroArch"
-ROM_PATH="/mnt/e/rom_unpack"
-
-# retroarch config path seen from script ( ~/.config/retroarch/ for linux)
-#RETROARCH_PATH="~/.config/retroarch/"
-#ROM_PATH="/mnt/rom_directory"
-
-# core definition for windows
-EMULATOR_DEF_PATH="${SCRIPT_PATH}/Emulators.xml"
-
-### categorie 
 # TODO set by param
 . ${SCRIPT_PATH}/param_random_retroarch.txt
 
@@ -34,7 +17,7 @@ function randomize(){
 	RANDOM=$SEED; # init RANDOM
 	#random_number_console=$(( ${RANDOM} % MAX + MIN /32767))
 	#random_number_game=$(( $SEED % MAX + MIN ))
-	random_number=$(( MIN+RANDOM*(MAX - MIN)/32768))
+	random_number=$(( RANDOM*(MAX)/32768))
 }
 
 function select_console(){
@@ -48,7 +31,7 @@ function select_console(){
 	#snes
 	#mastersystem
 	#gw"
-	#CONSOLES="atarist"
+	#CONSOLES="pc98"
 	# get the number of console
 	max_console=$(echo "$CONSOLES" | wc -l)
 	# echo "max_console: $max_console"
@@ -124,6 +107,7 @@ function get_gamelist(){
 			fi
 		fi
 	fi
+	full_maxgame=$(echo "$gamelist"| sed '/^$/d' | wc -l)
 	#echo "$gamelist"
 }
 
@@ -211,7 +195,7 @@ function manage_multi_entry_and_cue(){
 function select_game(){
 	### Select a rom
 	# 	or from the gamelist.xml file 
-	#	or from listing directory
+	#	or from listing 
 	# 	or if a categorie is set from the categorie file list
 	
 	# number of game in the playlist
@@ -237,7 +221,8 @@ function select_game(){
 	IFS=$OIFS
 	
 	#remove selected rom from the gamelist
-	gamelist=$(echo "$gamelist" | sed "/${rom}/d")
+	rom_escaped=$(echo "${rom}" | sed 's/[][]/\\&/g')
+	gamelist=$(echo "$gamelist" | sed "/${rom_escaped}/d")
 	#echo "Game list: $gamelist"
 	
 	# list all roms that contains rom name
@@ -288,7 +273,7 @@ function select_game(){
 		is_a_listed_game=0 # var for the until loop
 	fi
 	# clear the laucnhed games file if the number of game for this console is reached
-	if [[ $(grep -c -F "${console}" "${SCRIPT_PATH}/${categorie}_launchedgames.txt") -ge ${maxgame} ]] ; then 
+	if [[ $(grep -c -F "${console}" "${SCRIPT_PATH}/${categorie}_launchedgames.txt") -ge ${full_maxgame} ]] ; then 
 		sed "/${console}.*/d" -i "${SCRIPT_PATH}/${categorie}_launchedgames.txt"
 	fi
 }
@@ -329,6 +314,7 @@ function get_core(){
 function generate_obs_title(){
 	# generate html for obs from template file
 	sed -e "s/CONSOLE/${current_console}/g" -e "s/CURRENTGAME/${current_game}/g" "${SCRIPT_PATH}/retro.html.template" >  "${SCRIPT_PATH}/retro.html"
+	sed -e "s/CONSOLE/${current_console}/g" -e "s/CURRENTGAME/${current_game}/g" "${SCRIPT_PATH}/retro_video.html.template" >  "${SCRIPT_PATH}/retro_video.html"
 }
 
 function set_stream_title(){
@@ -370,21 +356,27 @@ function start_game(){
 					echo '"'D:\\Jeux steam\\retro\\hatari-2.6.0_windows64\\hatari.exe'"' '"'${ROM_PATH_WIN}/${current_console}/${rom}'"'
 					exit
 					;;
-				# "psx")
-					# echo '"'D:\\Jeux steam\\retro\\epsxe\\epsxe.exe'"' -nogui  -loadbin '"'${rom}'"'
-					# exit
-					# ;;
 				"3ds")
 					echo '"'D:\\Jeux steam\\retro\\citra\\citra-qt.exe'"' '"'${ROM_PATH_WIN}/${current_console}/${rom}'"'
 					exit
 					;;
+				"pc98")
+					if [[ "${rom}" == "Policenauts.cmd" ]]; then
+						echo '"'${ROM_PATH_WIN}/${current_console}/${rom%.cmd}/np21nt.exe'"'
+						exit
+					fi
+					;;
+				# "psx")
+				#	echo '"'D:\\Jeux steam\\retro\\epsxe\\epsxe.exe'"' -nogui  -loadbin '"'${rom}'"'
+				#	exit
+				#	;;
 				#"ps2")
 				#	echo '"'D:\\Jeux steam\\retro\\PCSX2 1.4.0\\pcsx2.exe'"' --fullscreen '"'${ROM_PATH_WIN}/${current_console}/${rom}'"'
 				#	exit
 				#	;;
 			esac
 			# echo the return for windows batch execute command
-			echo "${RETROARCH_WIN_PATH}\retroarch.exe -f " ${core} '"'${ROM_PATH_WIN}\\${current_console}\\${rom}'"'
+			echo "${RETROARCH_PATH_WIN}\retroarch.exe -f " ${core} '"'${ROM_PATH_WIN}\\${current_console}\\${rom}'"'
 		else # echo no core found for the console
 			echo "set /p end=No core for ${current_console}"
 		fi
@@ -400,6 +392,7 @@ function start_game(){
 #get_gamelist
 
 is_a_listed_game=1
+console=""
 until [[ ${is_a_listed_game} == 0 ]]; do
 	if [[ "${favorites}" == "true" ]]; then 
 		cores=$(grep -e \"core_path "${RETROARCH_PATH}/content_favorites.lpl")
@@ -409,12 +402,13 @@ until [[ ${is_a_listed_game} == 0 ]]; do
 		#console=${current_console}
 		rom=$(echo "${rom}" | sed -e 's/.*\\//' -e 's/",//')
 	else
-		console=""
-		while [[ "${console}" == "" ]] ; do 
-			select_console
-		done
-		get_gamelist                               
-		currentPlaylist="${ROM_PATH}/${current_console}/gamelist.xml" # playlist directory
+		if [[ "${console}" == "" ]]; then
+			while [[ "${console}" == "" ]] ; do 
+				select_console
+			done
+			get_gamelist
+		fi
+		#currentPlaylist="${ROM_PATH}/${current_console}/gamelist.xml" # playlist directory
 		if [[ -f "${currentPlaylist}" ]] ;then # if there is gamelist in the directory it's that there is some game so... 
 			select_game
 		fi
