@@ -22,7 +22,7 @@ stream="twitch"
 favorites="false"
 
 ### EXCLUDED
-EXCLUDED_CONSOLES="prboom mrboom doom tyrquake solarus openbor lutro apple2gs amiga600 amstradcpc tic80 thomson virtualboy satellaview easyrpg"
+EXCLUDED_CONSOLES="prboom mrboom doom tyrquake solarus openbor lutro apple2gs amiga600 amstradcpc tic80 thomson virtualboy satellaview easyrpg vectrex pokemini"
 
 ### PATHS
 ## WINDOWS
