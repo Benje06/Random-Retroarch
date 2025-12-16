@@ -34,7 +34,7 @@ function select_console(){
 	#snes
 	#mastersystem
 	#gw"
-	#CONSOLES="wswanc"
+	#CONSOLES="ps2"
 	# get the number of console
 	max_console=$(echo "$CONSOLES" | wc -l)
 	# echo "max_console: $max_console"
@@ -80,7 +80,7 @@ function get_gamelist(){
 				# gamelist retroarch
 				#old #gamelist=$(grep '"path' "$RETROARCH_PLAYLIST/$currentPlaylist" | cut -d '"' -f4 | sed 's/",$//' | sed 's/^ "//')
 				#gamelist=$(grep "<path>" $currentPlaylist | sed "s/.*<path>\.\/\(.*\)<\/path>/\1/")
-				gamelist=$(ls -p "${ROM_PATH}/${console}" | grep -ve "\.srm" -ve "\.txt" -ve "\.xml" -ve "/") #list game in directory
+				gamelist=$(ls -p "${ROM_PATH}/${console}" | grep -ve "\.srm" -ve "\.txt" -ve "\.xml" -ve "\.html" -ve "/") #list game in directory
 			fi
 		fi
 	fi
@@ -162,7 +162,7 @@ function manage_multi_entry_and_cue(){
 		rom=$(echo "${tmpname}" |  grep "\.cue")
 	fi
 	if [[ ${console} == 'pcenginecd' || ${console} == 'neogeocd' ]]; then
-		rom=$(echo "${tmpname}" |  sed -e 's/\.bin/\.cue/g' -e 's/\.img/\.cue/g' -e 's/\.sub/\.cue/g' )
+		rom=$(echo "${tmpname}" |  sed -e 's/\.bin/\.cue/g' -e 's/\.img/\.cue/g' -e 's/\.sub/\.cue/g' -e 's/\.ccd/\.cue/g' )
 	fi
 }
 
@@ -334,7 +334,11 @@ function start_game(){
 					fi
 					;;
 				"ps2")
-					echo '"'D:\\Jeux steam\\retro\\PCSX2 1.4.0\\pcsx2.exe'"' --fullscreen '"'${ROM_PATH_WIN}/${console}/${rom}'"'
+					echo '"'D:\\Jeux steam\\retro\\PCSX2 1.4.0\\pcsx2.exe'"' --fullscreen --fullboot '"'${ROM_PATH_WIN}/${console}/${rom}'"'
+					exit
+					;;
+				"Playstation 2")
+					echo '"'D:\\Jeux steam\\retro\\PCSX2 1.4.0\\pcsx2.exe'"' --fullscreen --fullboot '"'${ROM_PATH_WIN}/${console}/${rom}'"'
 					exit
 					;;
 				# "psx")
