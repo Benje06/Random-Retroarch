@@ -176,6 +176,7 @@ function select_game(){
 	maxgame=$(echo "$gamelist"| sed '/^$/d' | wc -l)
 	if [[ ${maxgame} -eq 0 ]]; then
 		echo "No game matching for ${console}"
+		console=""
 		is_a_listed_game=0
 		return
 	fi
@@ -366,12 +367,12 @@ until [[ ${is_a_listed_game} == 0 ]]; do
 		select_game
 		rom=$(echo "${rom}" | sed -e 's/.*\\//' -e 's/",//')
 	else
-		if [[ "${console}" == "" ]]; then
+		while [[ "${console}" == "" ]]; do
 			select_console
-		fi
-		if [[ -f "${currentPlaylist}" ]] ;then # if there is gamelist in the directory it's that there is some game so... 
-			select_game
-		fi
+			if [[ -f "${currentPlaylist}" ]] ;then # if there is gamelist in the directory it's that there is some game so... 
+				select_game
+			fi
+		done
 	fi
 done
 get_core
