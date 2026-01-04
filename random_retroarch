@@ -34,7 +34,7 @@ function select_console(){
 	#snes
 	#mastersystem
 	#gw"
-	#CONSOLES="ps2"
+	#CONSOLES="supergrafx"
 	# get the number of console
 	max_console=$(echo "$CONSOLES" | wc -l)
 	# echo "max_console: $max_console"
@@ -67,7 +67,7 @@ function get_gamelist(){
 		if [[ -v saga ]] ;then
 			echo " Saga: ${saga}"
 			# get all game of the current console that contains saga name
-			gamelist=$(ls "${ROM_PATH}/${console}" | grep -ve "\.srm" -ve "\.txt" -ve "\.xml" -ve "\.html" -ve "/" | grep -iE "${saga}"|sort -n)
+			gamelist=$(ls "${ROM_PATH}/${console}" | grep -ve "\.dat" -ve "\.srm" -ve "\.txt" -ve "\.xml" -ve "\.html" -ve "\.nfo" -ve "/" | grep -iE "${saga}"|sort -n)
 		# else get list of games
 		else			
 			if [ $(cat /proc/version | grep -c microsoft) == 0 ] ; then
@@ -80,7 +80,7 @@ function get_gamelist(){
 				# gamelist retroarch
 				#old #gamelist=$(grep '"path' "$RETROARCH_PLAYLIST/$currentPlaylist" | cut -d '"' -f4 | sed 's/",$//' | sed 's/^ "//')
 				#gamelist=$(grep "<path>" $currentPlaylist | sed "s/.*<path>\.\/\(.*\)<\/path>/\1/")
-				gamelist=$(ls -p "${ROM_PATH}/${console}" | grep -ve "\.srm" -ve "\.txt" -ve "\.xml" -ve "\.html" -ve "/") #list game in directory
+				gamelist=$(ls -p "${ROM_PATH}/${console}" | grep -ve "\.dat" -ve "\.srm" -ve "\.txt" -ve "\.xml" -ve "\.html" -ve "\.nfo" -ve "/") #list game in directory
 			fi
 		fi
 	fi
@@ -167,6 +167,7 @@ function manage_multi_entry_and_cue(){
 }
 
 function select_game(){
+	#echo " IN Select_game"
 	### Select a rom
 	# 	or from the gamelist.xml file 
 	#	or from listing 
@@ -236,11 +237,16 @@ function select_game(){
 	if [[ $(grep -c -F "${console}_${rom}" "${SCRIPT_PATH}/${categorie}_launchedgames.txt") == 0 ]] ; then 
 		echo "${console}_${rom}" >> "${SCRIPT_PATH}/${categorie}_launchedgames.txt"
 		is_a_listed_game=0 # var for the until loop
+	else
+		#else rset is listed game and reset console select
+		is_a_listed_game=1
+		console=""
 	fi
 	# clear the laucnhed games file if the number of game for this console is reached
 	if [[ $(grep -c -F "${console}" "${SCRIPT_PATH}/${categorie}_launchedgames.txt") -ge ${full_maxgame} ]] ; then 
 		sed "/${console}.*/d" -i "${SCRIPT_PATH}/${categorie}_launchedgames.txt"
 	fi
+	#echo " OUT Select_game"
 }
 
 function get_core(){
@@ -371,6 +377,8 @@ until [[ ${is_a_listed_game} == 0 ]]; do
 			select_console
 			if [[ -f "${currentPlaylist}" ]] ;then # if there is gamelist in the directory it's that there is some game so... 
 				select_game
+			#else
+			#	console=""
 			fi
 		done
 	fi
